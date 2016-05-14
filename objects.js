@@ -61,9 +61,11 @@ function buildPerson(person, nameString, age){
     person.name  = nameString;
     person.age = age;
 
-return plainPerson;
+return person;
 }
-var sleepyPerson = (plainPerson, "Houdini", 26);
+var completePerson = {};
+
+buildPerson(completePerson, "Houdini", 26);
 
 
 /*
@@ -145,88 +147,173 @@ var arrayOfObjects = [
   }
 ];
 
-function printProcessedOrders(orders){
-    for (var i = 0, i < orders.length, i++){
-
-    }
-
-
-
-
-
+function printProcessedOrders (orders){
+   for (i = 0; i<orders.length; i++){
+       
+    }    
+   
+}
 
 
 
 /*
     # Addition with an object
-        Declare a new variable named sumObj and set it to be a new object with the properties `a`, `b`, and `result`. Properties 'a' and 'b' will be set to a number and result will be 'undefined.'
+        Declare a new variable named sumObj and set it to be a new object with the properties `a`, `b`, 
+        and `result`. Properties 'a' and 'b' will be set to a number and result will be 'undefined.'
 
-        Declare a new function named objectAddition. Declare the first parameter, which will be an object. Within this function, you will access the values stored `a` and `b` of the object being passed in. Add the these values and store the sum to this object's `result` property. This function will return the object.
+        Declare a new function named objectAddition. Declare the first parameter, which 
+        will be an object. Within this function, you will access the values stored `a` and `b` of 
+        the object being passed in. Add the these values and store the sum to this 
+        object's `result` property. This function will return the object.
 
-        Invoke your function and pass in your object, store the result to a variable named sumObjResult and use `console.log` to inspect your results.
+        Invoke your function and pass in your object, store the result to a variable 
+        named sumObjResult and use `console.log` to inspect your results.
 
         Go ahead and create some more objects and pass them to this function. Have fun with it.
 */
+var sumObj = {
+    a : 1,
+    b : 3,
+    result : undefined
+};
+function objectAddition(x){
+    x.result = x.a + x.b;
+return x;
+}
+objectAddition(sumObj);
+
 
 
 /*
     # Print sum function and add as new key-value
-        Declare a new function named printObj and a single parameter which will be the object from the challenge just above. Within this function you are to print to the screen a message of the operation performed. For Example:
+
+        Declare a new function named printObj and a single parameter which will be the object 
+        from the challenge just above. Within this function you are to print to the screen 
+        a message of the operation performed. For Example:
 
         // if this object was passed into your function:
         { a: 10, b:67, result: 77 }
         // it should print a message saying
         '10 + 67 = 77'
 
-        Before returning this object, add a new property to it named `output` and set it to be the message that was printed out.
+        Before returning this object, add a new property to it named `output` and 
+        set it to be the message that was printed out.
 
-        Invoke this function and pass in your object. Further test by changing the values of the object being passed in or **create more** objects and invoke your function multiple times.
+        Invoke this function and pass in your object. Further test by changing 
+        the values of the object being passed in or **create more** objects and 
+        invoke your function multiple times.
  */
+
+function printObj(x){
+    return x.a + "+" + x.b + "=" + x.result;
+
+}
+printObj(sumObj);
+
+
+
 
 
 /*
     # Putting stuff in `plainBox`
-        Declare a function named putInPlainBox and a single parameter which will be an object. Within this function, write a FOR loop that adds **10** random number values to the array referenced at the `contents` property of the object being passed in. This function will return the object.
 
-        Invoke your function and pass in your object (which should be `plainBox`), store the result to a variable named plainBoxResult and use `console.log` to inspect your results.
+        Declare a function named putInPlainBox and a single parameter 
+        which will be an object. Within this function, write a FOR loop 
+        that adds **10** random number values to the array referenced at 
+        the `contents` property of the object being passed in. 
+        This function will return the object.
+
+        Invoke your function and pass in your object (which should be `plainBox`), 
+        store the result to a variable named plainBoxResult and use `console.log` 
+        to inspect your results.
  */
 
+var z = 10;
+function putInPlainBox(z){
+       return z + 10 + 10 + 10 + 10;
+}
+putInPlainBox(z);
 
 /*
     # Detecting transmission
-        Declare a function named detectingTranmission and a single parameter which will be an object. Within this function you will check to see if the car has an automatic or manual transmission and print the results on screen.
 
-        If `automaticTransmission` is true then print a message saying so. Also, provide an appropriate message for when the its false.
+        Declare a function named detectingTranmission and a single parameter 
+        which will be an object. 
 
-        Invoke your function and pass in your stockCar object, store the result to a variable named isAutomaticTransmission and use `console.log` to inspect your results.
+        Within this function you will check to see 
+        if the car has an automatic or manual transmission 
+        and print the results on screen.
+
+        If `automaticTransmission` is true then print a message saying so. 
+        Also, provide an appropriate message for when the its false.
+
+        Invoke your function and pass in your stockCar object, store the result 
+        to a variable named isAutomaticTransmission and use `console.log` to inspect your results.
  */
 
+function detectingTranmission (object){
+    if (object.automatictransmission === true){  
+    return "automatictransmission";
+}
+else{
+    return "manualtransmission";
+}
+return object;
+}
+
+detectingTranmission(stockCar);
 
 /*
     # Who's driving this thing?!
+
         As you may have noticed that the `stockCar` doesn't have a driver!
 
-        Declare a function named addDriver with two parameters. The first parameter will be an object with represents a **car**, the other will be a **person**. Within this function, set the `driver` value of the **stockCar** to the second parameter being passed into your function.
+        Declare a function named addDriver with two parameters. 
+        The first parameter will be an object with represents a **car**, 
+        the other will be a **person**. 
 
-        Invoke your function and pass in your objects, store the result to a variable named stockCarWithDriver, and inspect your results. Consider using `plainPerson` as your driver.
+        Within this function, set the `driver` value of the **stockCar** 
+        to the second parameter being passed into your function.
+
+        Invoke your function and pass in your objects, 
+        store the result to a variable named stockCarWithDriver, 
+        and inspect your results. Consider using `plainPerson` as your driver.
  */
 
+function addDriver(car, person){
+    car.driver = person;
+    return car;
+}
+addDriver(stockCar, plainPerson);
 
 /*
     # Final Boss
+    
     The Dev League instructors want to ride your whip!
 
-        Declare a variable named `passengerList` and set it to be `['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor']`
+        Declare a variable named `passengerList` and 
+        set it to be `['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor']`
 
-        Declare a variable named `passengerAges` and set it to be `[19, 12, 21, 22, 16, 9, 19, 20, 15]`
+        Declare a variable named `passengerAges` and 
+        set it to be `[19, 12, 21, 22, 16, 9, 19, 20, 15]`
 
-        Declare a function named `addPassengers` with three parameters. The first will be a **car** and the second will be an array of **names** and the third will be an array of **ages**. The names and ages are in sequence, e.g. "Jon" is "19", "Jason" is "12".
+        Declare a function named `addPassengers` with three parameters. 
+        The first will be a **car** and 
+        the second will be an array of **names** and 
+        the third will be an array of **ages**. 
+        The names and ages are in sequence, e.g. "Jon" is "19", "Jason" is "12".
 
         In the end you will return the **car** but within the function...
 
-        You will have to populate the `passengers` array on the **car** object with proper objects that represent a person. Currently you have two arrays, one which contains names and another which contains ages.
+        You will have to populate the `passengers` array on 
+        the **car** object with proper objects that represent a person. 
+        Currently you have two arrays, one which contains names and another which contains ages.
 
-        You should iterate through the names and ages, pass the values to your `buildPerson` function to build person objects (remember that this function returns a new object). Don't forget that this function actually takes **three** arguments, how will you handle that? (you should not have to change your function).
+        You should iterate through the names and ages, 
+        pass the values to your `buildPerson` function to build person objects 
+        (remember that this function returns a new object). 
+        Don't forget that this function actually takes **three** arguments, 
+        how will you handle that? (you should not have to change your function).
 
     Example of a loaded Car:
 
